@@ -12,16 +12,17 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#ffffff;
-    color:#111;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:#ffffff;
     overflow-x:hidden;
 }
 
 /* ===== Scroll Animation Background ===== */
+
 #animation-container{
     position:fixed;
     top:0;
@@ -38,18 +39,41 @@ body{
 #animation-frame{
     width:70%;
     max-width:900px;
-    opacity:0.07; /* watermark transparency */
-    transition:opacity 0.3s ease;
+    opacity:0.08;
+    filter:brightness(1.5) contrast(1.2);
 }
 
-/* ===== Content Styling ===== */
+/* ===== Glass Section ===== */
 
 .section{
     min-height:100vh;
     padding:80px 10%;
     display:flex;
-    flex-direction:column;
     justify-content:center;
+    align-items:center;
+}
+
+.glass-card{
+    width:100%;
+    max-width:900px;
+    padding:50px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    animation: fadeUp 1s ease forwards;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+/* Fade animation */
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 h1{
@@ -61,19 +85,19 @@ h1{
 h2{
     font-size:28px;
     margin-bottom:20px;
-    color:#333;
+    background: linear-gradient(90deg,#00c6ff,#0072ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 h3{
-    font-size:20px;
-    margin-bottom:10px;
     margin-top:20px;
+    margin-bottom:10px;
 }
 
-p{
+p, li{
     font-size:16px;
     line-height:1.8;
-    margin-bottom:10px;
 }
 
 ul{
@@ -81,26 +105,16 @@ ul{
     padding-left:0;
 }
 
-ul li{
+li{
     margin-bottom:8px;
-    font-size:16px;
 }
 
-.highlight{
-    color:#0077ff;
-    font-weight:500;
-}
-
-.contact p{
-    margin-bottom:6px;
-}
-
-.profile-link a{
-    color:#0077ff;
+a{
+    color:#00c6ff;
     text-decoration:none;
 }
 
-.profile-link a:hover{
+a:hover{
     text-decoration:underline;
 }
 
@@ -108,105 +122,124 @@ ul li{
     text-align:center;
     padding:40px;
     font-size:14px;
-    color:#777;
+    opacity:0.7;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Scroll Animation Background -->
+<!-- Background Animation -->
 <div id="animation-container">
-    <img id="animation-frame" src="frames/ezgif-frame-001.jpg" alt="scroll animation">
+    <img id="animation-frame" src="frames/ezgif-frame-001.jpg">
 </div>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="section">
-    <h1>SANDEEP S</h1>
-    <h2 class="highlight">Frontend Developer</h2>
-    <p>
-        I consider myself as a beginner to start my career and look forward to my first
-        work experience to explore technical skills and knowledge.
-    </p>
+    <div class="glass-card">
+        <h1>SANDEEP S</h1>
+        <h2>Frontend Developer</h2>
+        <p>
+            I consider myself as a beginner to start my career and look forward 
+            to my first work experience to explore technical skills and knowledge.
+        </p>
+    </div>
 </section>
 
-<!-- Contact Section -->
-<section class="section contact">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> +91 9345707585</p>
-    <p><strong>Email:</strong> sandeepvj2005@gmail.com</p>
-    <p><strong>Location:</strong> Valapady (Taluk), Salem - 636115</p>
+<!-- Contact -->
+<section class="section">
+    <div class="glass-card">
+        <h2>Contact</h2>
+        <p><strong>Phone:</strong> +91 9345707585</p>
+        <p><strong>Email:</strong> sandeepvj2005@gmail.com</p>
+        <p><strong>Location:</strong> Valapady (Taluk), Salem - 636115</p>
+        <p>
+            <strong>LinkedIn:</strong> 
+            <a href="https://www.linkedin.com/in/sandeeps77" target="_blank">
+                linkedin.com/in/sandeeps77
+            </a>
+        </p>
+    </div>
 </section>
 
-<!-- Education Section -->
+<!-- Education -->
 <section class="section">
-    <h2>Education</h2>
+    <div class="glass-card">
+        <h2>Education</h2>
 
-    <h3>B.E - Electronics and Communication Engineering</h3>
-    <p>Government College of Engineering - Tirunelveli</p>
-    <p>2023 - 2027 | CGPA: 7.19</p>
+        <h3>B.E - Electronics and Communication Engineering</h3>
+        <p>Government College of Engineering - Tirunelveli</p>
+        <p>2023 - 2027 | CGPA: 7.19</p>
 
-    <h3>Schooling</h3>
-    <p>Government Boys Higher Secondary School - Salem</p>
-    <p>2016 - 2023</p>
+        <h3>Schooling</h3>
+        <p>Government Boys Higher Secondary School - Salem</p>
+        <p>2016 - 2023</p>
+    </div>
 </section>
 
-<!-- Skills Section -->
+<!-- Skills -->
 <section class="section">
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>• HTML</li>
-        <li>• CSS</li>
-        <li>• JavaScript</li>
-    </ul>
+    <div class="glass-card">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>• HTML</li>
+            <li>• CSS</li>
+            <li>• JavaScript</li>
+        </ul>
 
-    <h2>Soft Skills</h2>
-    <ul>
-        <li>• Communication Skills</li>
-        <li>• Management Skills</li>
-        <li>• Critical Thinking</li>
-        <li>• Process Flow Understanding</li>
-        <li>• Negotiation</li>
-    </ul>
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>• Communication Skills</li>
+            <li>• Management Skills</li>
+            <li>• Critical Thinking</li>
+            <li>• Process Flow</li>
+            <li>• Negotiation</li>
+        </ul>
+    </div>
 </section>
 
-<!-- Hobbies Section -->
+<!-- Hobbies -->
 <section class="section">
-    <h2>Hobbies</h2>
-    <ul>
-        <li>• Reading</li>
-        <li>• Football</li>
-        <li>• Music</li>
-    </ul>
-
-    <div class="profile-link">
-        <h2>Profile Link</h2>
-        <a href="https://www.linkedin.com/in/sandeeps77" target="_blank">
-            linkedin.com/in/sandeeps77
-        </a>
+    <div class="glass-card">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>• Reading</li>
+            <li>• Football</li>
+            <li>• Music</li>
+        </ul>
     </div>
 </section>
 
 <div class="footer">
-    © 2026 Sandeep S | Portfolio
+    © 2026 Sandeep S | Dark Glass Portfolio
 </div>
 
 <script>
 const frameCount = 240;
-const animationFrame = document.getElementById("animation-frame");
+const img = document.getElementById("animation-frame");
 
 window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScroll;
-    const frameIndex = Math.min(
-        frameCount - 1,
-        Math.floor(scrollFraction * frameCount)
-    );
+    const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
 
     const frameNumber = String(frameIndex + 1).padStart(3, '0');
-    animationFrame.src = `frames/ezgif-frame-${frameNumber}.jpg`;
+    img.src = `frames/ezgif-frame-${frameNumber}.jpg`;
 });
+
+/* Intersection animation trigger */
+const cards = document.querySelectorAll(".glass-card");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.animation = "fadeUp 1s ease forwards";
+        }
+    });
+},{threshold:0.3});
+
+cards.forEach(card => observer.observe(card));
 </script>
 
 </body>
