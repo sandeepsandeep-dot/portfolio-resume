@@ -15,8 +15,14 @@
     font-family:'Poppins',sans-serif;
 }
 
+html, body{
+    width:100%;
+    height:100%;
+    scroll-behavior:smooth;
+}
+
 body{
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background:#0f172a;
     color:#ffffff;
     overflow-x:hidden;
 }
@@ -29,192 +35,180 @@ body{
     left:0;
     width:100%;
     height:100vh;
-    z-index:-1;
     display:flex;
     justify-content:center;
     align-items:center;
+    z-index:-1;
     pointer-events:none;
 }
 
 #animation-frame{
-    width:70%;
-    max-width:900px;
-    opacity:0.08;
-    filter:brightness(1.5) contrast(1.2);
+    width:80%;
+    max-width:1000px;
+    opacity:0.06;
+    filter:brightness(1.3) contrast(1.2);
 }
 
-/* ===== Glass Section ===== */
+/* ===== Sections ===== */
 
 .section{
     min-height:100vh;
+    width:100%;
     padding:80px 10%;
     display:flex;
+    flex-direction:column;
     justify-content:center;
-    align-items:center;
+    position:relative;
 }
 
-.glass-card{
+.section::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
     width:100%;
-    max-width:900px;
-    padding:50px;
-    border-radius:20px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    animation: fadeUp 1s ease forwards;
-    opacity:0;
-    transform:translateY(40px);
-}
-
-/* Fade animation */
-@keyframes fadeUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    height:1px;
+    background:rgba(255,255,255,0.1);
 }
 
 h1{
-    font-size:48px;
+    font-size:52px;
     font-weight:700;
-    margin-bottom:10px;
 }
 
 h2{
-    font-size:28px;
-    margin-bottom:20px;
-    background: linear-gradient(90deg,#00c6ff,#0072ff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    font-size:30px;
+    margin:20px 0;
+    color:#38bdf8;
 }
 
 h3{
     margin-top:20px;
-    margin-bottom:10px;
+    font-size:20px;
+    font-weight:500;
 }
 
 p, li{
-    font-size:16px;
+    font-size:17px;
     line-height:1.8;
 }
 
 ul{
     list-style:none;
-    padding-left:0;
+    margin-top:10px;
 }
 
 li{
     margin-bottom:8px;
 }
 
-a{
-    color:#00c6ff;
-    text-decoration:none;
+/* Hero Highlight */
+.highlight{
+    background: linear-gradient(90deg,#38bdf8,#0ea5e9);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-a:hover{
-    text-decoration:underline;
+/* Fade Up Animation */
+.fade-up{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
 }
 
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Footer */
 .footer{
     text-align:center;
     padding:40px;
     font-size:14px;
-    opacity:0.7;
+    opacity:0.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Background Animation -->
+<!-- Scroll Animation Background -->
 <div id="animation-container">
-    <img id="animation-frame" src="frames/ezgif-frame-001.jpg">
+    <img id="animation-frame" src="frames/ezgif-frame-001.jpg" alt="">
 </div>
 
-<!-- Hero -->
-<section class="section">
-    <div class="glass-card">
-        <h1>SANDEEP S</h1>
-        <h2>Frontend Developer</h2>
-        <p>
-            I consider myself as a beginner to start my career and look forward 
-            to my first work experience to explore technical skills and knowledge.
-        </p>
-    </div>
+<!-- HERO -->
+<section class="section fade-up">
+    <h1>SANDEEP S</h1>
+    <h2 class="highlight">Frontend Developer</h2>
+    <p>
+        I consider myself as a beginner to start my career and look forward 
+        to my first work experience to explore technical skills and knowledge.
+    </p>
 </section>
 
-<!-- Contact -->
-<section class="section">
-    <div class="glass-card">
-        <h2>Contact</h2>
-        <p><strong>Phone:</strong> +91 9345707585</p>
-        <p><strong>Email:</strong> sandeepvj2005@gmail.com</p>
-        <p><strong>Location:</strong> Valapady (Taluk), Salem - 636115</p>
-        <p>
-            <strong>LinkedIn:</strong> 
-            <a href="https://www.linkedin.com/in/sandeeps77" target="_blank">
-                linkedin.com/in/sandeeps77
-            </a>
-        </p>
-    </div>
+<!-- CONTACT -->
+<section class="section fade-up">
+    <h2>Contact</h2>
+    <p><strong>Phone:</strong> +91 9345707585</p>
+    <p><strong>Email:</strong> sandeepvj2005@gmail.com</p>
+    <p><strong>Location:</strong> Valapady (Taluk), Salem - 636115</p>
+    <p><strong>LinkedIn:</strong> 
+        <a href="https://www.linkedin.com/in/sandeeps77" target="_blank" style="color:#38bdf8;">
+            linkedin.com/in/sandeeps77
+        </a>
+    </p>
 </section>
 
-<!-- Education -->
-<section class="section">
-    <div class="glass-card">
-        <h2>Education</h2>
+<!-- EDUCATION -->
+<section class="section fade-up">
+    <h2>Education</h2>
 
-        <h3>B.E - Electronics and Communication Engineering</h3>
-        <p>Government College of Engineering - Tirunelveli</p>
-        <p>2023 - 2027 | CGPA: 7.19</p>
+    <h3>B.E - Electronics and Communication Engineering</h3>
+    <p>Government College of Engineering - Tirunelveli</p>
+    <p>2023 - 2027 | CGPA: 7.19</p>
 
-        <h3>Schooling</h3>
-        <p>Government Boys Higher Secondary School - Salem</p>
-        <p>2016 - 2023</p>
-    </div>
+    <h3>Schooling</h3>
+    <p>Government Boys Higher Secondary School - Salem</p>
+    <p>2016 - 2023</p>
 </section>
 
-<!-- Skills -->
-<section class="section">
-    <div class="glass-card">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>• HTML</li>
-            <li>• CSS</li>
-            <li>• JavaScript</li>
-        </ul>
+<!-- SKILLS -->
+<section class="section fade-up">
+    <h2>Technical Skills</h2>
+    <ul>
+        <li>• HTML</li>
+        <li>• CSS</li>
+        <li>• JavaScript</li>
+    </ul>
 
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>• Communication Skills</li>
-            <li>• Management Skills</li>
-            <li>• Critical Thinking</li>
-            <li>• Process Flow</li>
-            <li>• Negotiation</li>
-        </ul>
-    </div>
+    <h2>Soft Skills</h2>
+    <ul>
+        <li>• Communication Skills</li>
+        <li>• Management Skills</li>
+        <li>• Critical Thinking</li>
+        <li>• Process Flow</li>
+        <li>• Negotiation</li>
+    </ul>
 </section>
 
-<!-- Hobbies -->
-<section class="section">
-    <div class="glass-card">
-        <h2>Hobbies</h2>
-        <ul>
-            <li>• Reading</li>
-            <li>• Football</li>
-            <li>• Music</li>
-        </ul>
-    </div>
+<!-- HOBBIES -->
+<section class="section fade-up">
+    <h2>Hobbies</h2>
+    <ul>
+        <li>• Reading</li>
+        <li>• Football</li>
+        <li>• Music</li>
+    </ul>
 </section>
 
 <div class="footer">
-    © 2026 Sandeep S | Dark Glass Portfolio
+    © 2026 Sandeep S | Dark Animated Portfolio
 </div>
 
 <script>
+/* Scroll Frame Animation */
 const frameCount = 240;
 const img = document.getElementById("animation-frame");
 
@@ -223,23 +217,22 @@ window.addEventListener("scroll", () => {
     const maxScroll = document.body.scrollHeight - window.innerHeight;
     const scrollFraction = scrollTop / maxScroll;
     const frameIndex = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
-
     const frameNumber = String(frameIndex + 1).padStart(3, '0');
     img.src = `frames/ezgif-frame-${frameNumber}.jpg`;
 });
 
-/* Intersection animation trigger */
-const cards = document.querySelectorAll(".glass-card");
+/* Fade Up Reveal */
+const elements = document.querySelectorAll(".fade-up");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if(entry.isIntersecting){
-            entry.target.style.animation = "fadeUp 1s ease forwards";
+            entry.target.classList.add("show");
         }
     });
-},{threshold:0.3});
+},{threshold:0.2});
 
-cards.forEach(card => observer.observe(card));
+elements.forEach(el => observer.observe(el));
 </script>
 
 </body>
